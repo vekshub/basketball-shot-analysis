@@ -1,0 +1,17 @@
+# Bytecode
+__pycache__/
+*.py[cod]
+
+# Data
+*.npy
+
+# Video files
+*.mp4
+*.avi
+*.mov
+
+# IDEs and OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
