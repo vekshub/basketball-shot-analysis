@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: zavrsni_rad.aux
+The style file: fer_IEEEtran_HR.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 150 items from 100.
+Database file #1: literatura.bib
+You've used 6 entries,
+            4225 wiz_defined-function locations,
+            871 strings with 8623 characters,
+and the built_in function-call counts, 4237 in all, are:
+= -- 314
+> -- 86
+< -- 30
++ -- 50
+- -- 14
+* -- 188
+:= -- 632
+add.period$ -- 16
+call.type$ -- 6
+change.case$ -- 4
+chr.to.int$ -- 75
+cite$ -- 6
+duplicate$ -- 292
+empty$ -- 386
+format.name$ -- 19
+if$ -- 1011
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 52
+newline$ -- 49
+num.names$ -- 6
+pop$ -- 136
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 337
+stack$ -- 0
+substring$ -- 180
+swap$ -- 225
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 6
+warning$ -- 0
+while$ -- 15
+width$ -- 7
+write$ -- 83
