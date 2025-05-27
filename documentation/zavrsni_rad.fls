@@ -1,9 +1,9 @@
-PWD /home/vex/depthai-ros/scripts/detection/documentation/LaTeX-template-for-final-thesis-at-UniZG-FER-main/Quickstart Examples
+PWD /home/vex/depthai-ros/scripts/detection/documentation
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/vex/depthai-ros/scripts/detection/documentation/LaTeX-template-for-final-thesis-at-UniZG-FER-main/Quickstart Examples/zavrsni_rad.tex
+INPUT /home/vex/depthai-ros/scripts/detection/documentation/zavrsni_rad.tex
 OUTPUT zavrsni_rad.log
 INPUT ./fer.cls
 INPUT ./fer.cls
@@ -1045,9 +1045,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-OUTPUT zavrsni_rad.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/ascender/opensans/OpenSans-Bold-T1-TLF.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Bold-T1-TLF--base.tfm
+OUTPUT zavrsni_rad.toc
 INPUT ./Figures/lenovo_yoga_tab3_pro_front.png
 INPUT ./Figures/lenovo_yoga_tab3_pro_front.png
 INPUT Figures/lenovo_yoga_tab3_pro_front.png
@@ -1060,6 +1060,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Bold-T1-TLF.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/ascender/opensans/OpenSans-Bold-T1-TLF.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Bold-T1-TLF--base.tfm
 INPUT ./zavrsni_rad.bbl
 INPUT zavrsni_rad.bbl
 INPUT ./zavrsni_rad.bbl

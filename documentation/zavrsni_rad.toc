@@ -1,0 +1,31 @@
+\babel@toc {croatian}{}\relax 
+\babel@toc {croatian}{}\relax 
+\babel@toc {croatian}{}\relax 
+\contentsline {chapter}{\numberline {1.}Uvod}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2.}Korištene tehnologije i alati}{4}{chapter.2}%
+\contentsline {chapter}{\numberline {3.}Razvoj sustava za detekciju i analizu košarkaškog šuta}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1.}Prikupljanje i obrada podataka}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2.}Detekcija objekata korištenjem YOLO modela}{5}{section.3.2}%
+\contentsline {section}{\numberline {3.3.}Prepoznavanje pokušaja šuta i pogođenih koševa}{5}{section.3.3}%
+\contentsline {section}{\numberline {3.4.}Rekonstrukcija 2D i 3D putanje lopte}{5}{section.3.4}%
+\contentsline {section}{\numberline {3.5.}Određivanje kuta izbačaja i brzine šuta}{5}{section.3.5}%
+\contentsline {section}{\numberline {3.6.}Mogućnosti prijenosa sustava na mobilne uređaje}{5}{section.3.6}%
+\contentsline {chapter}{\numberline {4.}Rezultati i rasprava}{6}{chapter.4}%
+\contentsline {section}{\numberline {4.1.}Primjeri detekcije i analize šuteva}{6}{section.4.1}%
+\contentsline {section}{\numberline {4.2.}Evaluacija točnosti detekcije i analize}{6}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1.}Eksperimenti u kojima se razvijeni postupak dobro ponaša}{6}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2.}Eksperimenti u kojima postupak nalazi objekte koje nismo tražili (false positive error)}{6}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3.}Eksperimenti u kojima postupak ne pronalazi tražene objekte (false negative error)}{6}{subsection.4.2.3}%
+\contentsline {chapter}{\numberline {5.}Zaključak}{7}{chapter.5}%
+\contentsline {chapter}{Literatura}{8}{chapter*.3}%
+\babel@toc {croatian}{}\relax 
+\contentsline {chapter}{Sa\v {z}etak}{9}{chapter*.4}%
+\babel@toc {croatian}{}\relax 
+\babel@toc {croatian}{}\relax 
+\babel@toc {croatian}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Abstract}{10}{chapter*.5}%
+\babel@toc {croatian}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {croatian}{}\relax 
+\contentsline {chapter}{\numberline {A:}The Code}{11}{chapter.1}%

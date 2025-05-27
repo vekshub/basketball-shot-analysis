@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex zavrsni_rad"] 1748006865 "zavrsni_rad.aux" "zavrsni_rad.bbl" "zavrsni_rad" 1748257553
-  "./fer_IEEEtran_HR.bst" 1623666897 60896 90d69aefaad7b24856119a58e789af2e ""
-  "literatura.bib" 1623666897 6295 5d4d40abb48b9c4001b6079bc6b50278 ""
-  "zavrsni_rad.aux" 1748257552 3216 1be65fb799298ab4c09eb666f84324dc "pdflatex"
+["bibtex zavrsni_rad"] 1748341481 "zavrsni_rad.aux" "zavrsni_rad.bbl" "zavrsni_rad" 1748341481
+  "./fer_IEEEtran_HR.bst" 1748340487 60896 90d69aefaad7b24856119a58e789af2e ""
+  "literatura.bib" 1748340487 6295 5d4d40abb48b9c4001b6079bc6b50278 ""
+  "zavrsni_rad.aux" 1748341481 6916 3729cae682d26706fbbee6e6ff1d2ca6 "pdflatex"
   (generated)
   "zavrsni_rad.bbl"
   "zavrsni_rad.blg"
-["pdflatex"] 1748257552 "/home/vex/depthai-ros/scripts/detection/documentation/LaTeX-template-for-final-thesis-at-UniZG-FER-main/Quickstart Examples/zavrsni_rad.tex" "zavrsni_rad.pdf" "zavrsni_rad" 1748257553
+["pdflatex"] 1748341481 "/home/vex/depthai-ros/scripts/detection/documentation/zavrsni_rad.tex" "zavrsni_rad.pdf" "zavrsni_rad" 1748341481
   "/etc/texmf/web2c/texmf.cnf" 1748002845 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/vex/depthai-ros/scripts/detection/documentation/LaTeX-template-for-final-thesis-at-UniZG-FER-main/Quickstart Examples/zavrsni_rad.tex" 1748257552 4339 5d7d9103746e204380efa3162ce8ec34 ""
+  "/home/vex/depthai-ros/scripts/detection/documentation/zavrsni_rad.tex" 1748341479 5967 9cd4aec730f480c71c67d43eab6ad262 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/opensans/a_jg4h6q.enc" 1561498186 2952 84fda6c8ae8be17712e9d998ffe48bad ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc" 1610747736 3356 2818ff063f8b5d0d850e1203330b9fda ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc" 1610747736 3416 3b99a05a42a4705ec5a5521d2bffa072 ""
@@ -156,13 +156,13 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1748006175 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1748006187 2798132 84c9c3725d3a288911f22499ac49a7b5 ""
   "Figures/lenovo_yoga_tab3_pro_front.png" 1623666897 151137 d184f93bed096b9065bc80fcba786b60 ""
-  "fer.cls" 1623666897 27127 b6eafcb69e4cae87147606c61c03c61d ""
-  "hr_1191247427_73.pdf" 1747819282 15404 dbc4a4000c8247b64013f8c9cc6eec67 ""
-  "zavrsni_rad.aux" 1748257552 3216 1be65fb799298ab4c09eb666f84324dc "pdflatex"
-  "zavrsni_rad.bbl" 1748006866 2507 2de39b471f8a9838acd381b257bc5a97 "bibtex zavrsni_rad"
-  "zavrsni_rad.out" 1748257552 745 f64ca0b185096b347789ee964136d58c "pdflatex"
-  "zavrsni_rad.tex" 1748257552 4339 5d7d9103746e204380efa3162ce8ec34 ""
-  "zavrsni_rad.toc" 1748257552 834 d2a2e584a7b57c8759a0c80e15ad9c6d "pdflatex"
+  "fer.cls" 1748340487 27127 b6eafcb69e4cae87147606c61c03c61d ""
+  "hr_1191247427_73.pdf" 1748340487 15404 dbc4a4000c8247b64013f8c9cc6eec67 ""
+  "zavrsni_rad.aux" 1748341481 6916 3729cae682d26706fbbee6e6ff1d2ca6 "pdflatex"
+  "zavrsni_rad.bbl" 1748341481 2507 2de39b471f8a9838acd381b257bc5a97 "bibtex zavrsni_rad"
+  "zavrsni_rad.out" 1748341481 4759 a84e6c622f00eb0ff413bc2196752c0a "pdflatex"
+  "zavrsni_rad.tex" 1748341479 5967 9cd4aec730f480c71c67d43eab6ad262 ""
+  "zavrsni_rad.toc" 1748341481 2223 1525bc5f7d0045cde9a1e4d9647bacf8 "pdflatex"
   (generated)
   "zavrsni_rad.aux"
   "zavrsni_rad.log"
