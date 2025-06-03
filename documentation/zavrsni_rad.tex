@@ -66,25 +66,56 @@
 \chapter{Uvod}
 \label{pog:uvod}
 
-Neki od radova koje ćemo citirati su \cite{6248073,6247753,ghiglia_pritt_phase_unwrapping,hartley2003multiple,4250461,123DCatch}.
-Trebaju nam samo radi testiranja kako izgleda referenciranje rada s konferencije, rada iz časopisa, knjige i Internetske stranice.
+Osnovni cilj košarkaške igre je stvaranje prilika za poentiranje, pri čemu svi elementi individualne tehnike, timske suradnje i kolektivne taktike nastoje omogučiti igraču da dođe u što povoljniju poziciju za šut. 
+Brojna istraživanja pokazala su da učinkovitost šuta, posebice u ključnim trenucima utakmice i s različitih pozicija na terenu, u značajnoj mjeri određuje ishod susreta. 
+Primjerice, u analizama utakmica hrvatske lige pokazano je da slobodna bacanja u posljednjih pet minuta čine u prosjeku 42\% poena pobjedničkih ekipa u tijesnim završnicama, u usporedbi s tek 22\% kod poraženih \cite{kumanovic}.
+Osim toga, dokazano je da je konačni rezultat utakmice snažno povezan s preciznošću šutiranja s distance, ali i s realizacijom šuteva iz reketa, poput polaganja i zakucavanja \cite{milanovic}.
+Bez efikasnog poentiranja, svi ostali tehničko-taktički aspekti igre gube smisao. 
+% Ovi elementi igre direktno utječu na ishod utakmice, naglašavajući potrebu za fokusom na tehniku šuta i izbor šuterskih pozicija.
 
-\begin{figure}[htb]
-  \centering
-  \includegraphics[width=0.38\linewidth]{Figures/lenovo_yoga_tab3_pro_front.png} 
-  \caption{Moja prva slika}
-  \label{slk:prvaslika}
-\end{figure}
+S obzirom na ova saznanja, jasno je da preciznost šuta, kako iz igre tako i s linije slobodnog bacanja, igra presudnu ulogu u konačnom ishodu košarkaških utakmica. 
+Intenzivan i ponavljajući samostalni trening neophodan je za napredak u šutu, no mnogim igračima nedostaje mogućnost objektivne analize vlastite tehnike.
+Analize šuterske učinkovitosti te biomehanike izvedbe u većini trenažnih procesa još uvijek se uvelike oslanjaju na subjektivne dojmove trenera i ručne statistike.  
+Takav pristup često je spor, sklon pogreškama i ne omogućuje dublju, kvantitativnu analizu specifičnih šuterskih situacija, kao što su kut i brzina izbačaja lopte.
 
-Referenciramo se na sliku \ref{slk:prvaslika} u sredini rečenice, zatim prije zareza \ref{slk:prvaslika}, te zatim na kraju rečenice \ref{slk:prvaslika}.
-Upravo smo testirali radi li naredba \verb|\ref| ispravno u slučaju kada nakon nje slijedi točka.
+Cilj ovog rada je razvoj sustava za automatsku analizu šuterske izvedbe u košarci korištenjem računalnog vida i dubinskih kamera. 
+Sustav omogućuje precizno praćenje 3D putanje lopte, detekciju koša te izračun ključnih metrika poput kuta izbačaja, brzine lopte i uspješnosti šuta. 
+Takva analiza pruža trenerima i igračima objektivne informacije potrebne za optimizaciju trenažnog procesa i povećanje učinkovitosti.
 
-Sada slijedi jedna jednadžba:
-\begin{equation}
-  \label{jed:prvajednadzba}
-  \int_{-\infty}^{+\infty}f(t)\,dt=F(\omega)
-\end{equation}
-Jednadžba \eqref{jed:prvajednadzba} je moja prva jednadžba koja defnira par $f(t)\ufrek F(\omega)$ ili $F(\omega)\uvrem f(t)$.
+Za detekciju lopte i obruča koristi se unaprijed istreniran YOLO model, dok se 3D pozicije objekata dobivaju kombiniranjem 2D koordinata s dubinskim informacijama. 
+Razvijeni sustav predstavlja korak prema modernizaciji trenažnog procesa u košarci, omogućujući preciznu, automatiziranu i pristupačnu analizu šuta, s ciljem poboljšanja individualne izvedbe i ukupne uspješnosti momčadi.
+
+%---TEORIJSKA PODLOGA I DOSADAŠNJA ISTRAŽIVANJA / THEORETICAL BACKGROUND AND PREVIOUS RESEARCH -----------------------------
+\chapter{Teorijska podloga i dosadašnja istraživanja}
+\label{pog:teorijska_podloga_i_dosadasnja_istrazivanja}
+
+\section{Umjetne neuronske mreže}
+\label{pog:kosarkaska_tehnika_suta}
+Duboko učenje temelji se na sposobnosti neuronskih mreža da aproksimiraju složene nelinearne funkcije, što omogućuje njihovu primjenu u širokom spektru problema \cite{Goodfellow-et-al-2016}. 
+Ključni model koji se koristi za tu svrhu je višeslojni perceptron (eng. multilayer perceptron (MLP)), koji kroz višeslojne arhitekture modelira odnose između ulaza i željenih izlaza.
+
+Za uspješno treniranje takvih mreža nužno je koristiti tehnike poput regularizacije (za sprječavanje prenaučenosti) i optimizacijskih algoritama (poput varijanti gradijentnog spusta). 
+Kada se modeli primjenjuju na velike ulaze, primjerice slike visoke rezolucije ili vremenske nizove, koriste se specijalizirane arhitekture:
+\begin{itemize}
+  \item \textbf{Konvolucijske neuronske mreže (CNN)} – dizajnirane za obradu vizualnih podataka, koriste konvolucijske slojeve za automatsko prepoznavanje značajki u slikama.
+  \item \textbf{Rekurentne neuronske mreže (RNN)} – koriste se za sekvencijalne podatke, poput teksta ili vremenskih nizova, jer mogu modelirati vremensku ovisnost između podataka.
+\end{itemize}
+
+Ove arhitekture čine temelj za mnoge praktične primjene dubokog učenja, uključujući analizu videozapisa, detekciju objekata i biomehaničku analizu pokreta, što je izravno povezano s temom ovog rada.
+
+\subsection{Višeslojni perceptron}
+\label{pog:viseslojni_perceptron}
+Višeslojni perceptron (MLP) je osnovna arhitektura umjetnih neuronskih mreža koja se sastoji od ulaznog sloja, jednog ili više skrivenih slojeva i izlaznog sloja.
+MLP mreže koriste se za rješavanje širokog spektra problema gdje se učenje pod nadzorom odvija pomoću algoritma s povratnom propagacijom pogreške (engl. error back-propagation algorithm).
+\subsection{Konvolucijska neuronska mreža}
+\label{pog:konvolucijska_neuronska_mreza}
+
+\subsection{YOLO model}
+\label{pog:yolo_model}
+
+
+\section{Dosadašnja istraživanja}
+\label{pog:dosadasnja_istrazivanja}
 
 %---KORIŠTENE TEHNOLOGIJE I ALATI / USED TECHNOLOGIES AND TOOLS -----------------------------
 \chapter{Korištene tehnologije i alati}
@@ -173,6 +204,24 @@ Jednadžba \eqref{jed:prvajednadzba} je moja prva jednadžba koja defnira par $f
   the first keyword; the second keyword; the third keyword
 \end{keywords}
 
+%predlozak
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.38\linewidth]{Figures/lenovo_yoga_tab3_pro_front.png} 
+  \caption{Moja prva slika}
+  \label{slk:prvaslika}
+\end{figure}
+
+Referenciramo se na sliku \ref{slk:prvaslika} u sredini rečenice, zatim prije zareza \ref{slk:prvaslika}, te zatim na kraju rečenice \ref{slk:prvaslika}.
+Upravo smo testirali radi li naredba \verb|\ref| ispravno u slučaju kada nakon nje slijedi točka.
+
+Sada slijedi jedna jednadžba:
+\begin{equation}
+  \label{jed:prvajednadzba}
+  \int_{-\infty}^{+\infty}f(t)\,dt=F(\omega)
+\end{equation}
+Jednadžba \eqref{jed:prvajednadzba} je moja prva jednadžba koja defnira par $f(t)\ufrek F(\omega)$ ili $F(\omega)\uvrem f(t)$.
 
 %--- PRIVITCI / APPENDIX -------------------------------------------------------
 

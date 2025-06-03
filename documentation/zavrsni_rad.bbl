@@ -24,41 +24,19 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{6248073}
-\BIBentryALTinterwordspacing
-A.~Agrawal, S.~Ramalingam, Y.~Taguchi, i V.~Chari, ``A theory of multi-layer
-  flat refractive geometry'', u \emph{2012 IEEE Conference on Computer Vision
-  and Pattern Recognition}, 2012., str. 3346--3353.
-  \url{https://doi.org/10.1109/CVPR.2012.6248073}
-\BIBentrySTDinterwordspacing
+\bibitem{kumanovic}
+Šime Kumanović, ``Značajnost slobodnih bacanja na strategiju igre i konačan
+  rezultat utakmice'', Magistarski rad, Kineziološki fakultet, Sveučilište u
+  Zagrebu, Zagreb, 2006.
 
-\bibitem{6247753}
-\BIBentryALTinterwordspacing
-M.~Gupta i S.~K. Nayar, ``Micro phase shifting'', u \emph{2012 IEEE Conference
-  on Computer Vision and Pattern Recognition}, lipanj 2012., str. 813--820.
-  \url{https://doi.org/10.1109/CVPR.2012.6247753}
-\BIBentrySTDinterwordspacing
+\bibitem{milanovic}
+D.~Milanović, ``Utjecaj varijabli ubacivanja lopte u koš na konačni rezultat
+  košarkaške utakmice.'' \emph{Kineziologija}, sv.~8, br. 1-2, str. 136--148,
+  1978.
 
-\bibitem{ghiglia_pritt_phase_unwrapping}
-D.~C. Ghiglia i M.~D. Pritt, \emph{Two-Dimensional Phase Unwrapping: Theory,
-  Algorithms, and Software}.\hskip 1em plus 0.5em minus 0.4em\relax Wiley,
-  svibanj 1998.
-
-\bibitem{hartley2003multiple}
-R.~Hartley i A.~Zisserman, \emph{Multiple view geometry in computer
-  vision}.\hskip 1em plus 0.5em minus 0.4em\relax Cambridge university press,
-  2003.
-
-\bibitem{4250461}
-\BIBentryALTinterwordspacing
-Y.~Y. Schechner, S.~K. Nayar, i P.~N. Belhumeur, ``Multiplexing for optimal
-  lighting'', \emph{IEEE Transactions on Pattern Analysis and Machine
-  Intelligence}, sv.~29, br.~8, str. 1339--1354, kolovoz 2007.
-  \url{https://doi.org/10.1109/TPAMI.2007.1151}
-\BIBentrySTDinterwordspacing
-
-\bibitem{123DCatch}
-{123D Catch}, \url{http://www.123dapp.com/catch}, [mre\v zno; stranica posje\'
-  cena: travanj 2017.].
+\bibitem{Goodfellow-et-al-2016}
+I.~Goodfellow, Y.~Bengio, i A.~Courville, \emph{Deep Learning}.\hskip 1em plus
+  0.5em minus 0.4em\relax MIT Press, 2016.,
+  \url{http://www.deeplearningbook.org}.
 
 \end{thebibliography}
