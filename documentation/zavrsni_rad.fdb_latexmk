@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex zavrsni_rad"] 1748972224 "zavrsni_rad.aux" "zavrsni_rad.bbl" "zavrsni_rad" 1748972389
+["bibtex zavrsni_rad"] 1749123342 "zavrsni_rad.aux" "zavrsni_rad.bbl" "zavrsni_rad" 1749123686
   "./fer_IEEEtran_HR.bst" 1748340487 60896 90d69aefaad7b24856119a58e789af2e ""
-  "literatura.bib" 1748968622 1078 9ba46e0e90594784afaf8ed959a88072 ""
-  "zavrsni_rad.aux" 1748972389 8227 ba9df61977ca07b901a48a936931c16c "pdflatex"
+  "literatura.bib" 1749122656 3277 01c207414e616ceb809a1da83ce9cb96 ""
+  "zavrsni_rad.aux" 1749123686 11814 184e6b29b6fb2bc8fa6eb068350d5a16 "pdflatex"
   (generated)
   "zavrsni_rad.bbl"
   "zavrsni_rad.blg"
-["pdflatex"] 1748972388 "/home/vex/depthai-ros/scripts/detection/documentation/zavrsni_rad.tex" "zavrsni_rad.pdf" "zavrsni_rad" 1748972389
+["pdflatex"] 1749123685 "/home/vex/depthai-ros/scripts/detection/documentation/zavrsni_rad.tex" "zavrsni_rad.pdf" "zavrsni_rad" 1749123686
   "/etc/texmf/web2c/texmf.cnf" 1748002845 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/vex/depthai-ros/scripts/detection/documentation/zavrsni_rad.tex" 1748972388 10543 6022c74836468497d2fbbfee5c52dd9b ""
+  "/home/vex/depthai-ros/scripts/detection/documentation/zavrsni_rad.tex" 1749123685 19499 a0f25289d1980c2e341fc96a4d726cb6 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/opensans/a_jg4h6q.enc" 1561498186 2952 84fda6c8ae8be17712e9d998ffe48bad ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc" 1610747736 3356 2818ff063f8b5d0d850e1203330b9fda ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc" 1610747736 3416 3b99a05a42a4705ec5a5521d2bffa072 ""
@@ -104,6 +104,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty" 1602711807 11772 8d0db0794e6aeb45348f60bbe3a3e093 ""
   "/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
+  "/usr/share/texlive/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontaxes/fontaxes.sty" 1595539507 14310 41fdb35c51be792ddf00696848d0cfef ""
   "/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
@@ -158,14 +159,19 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1748006175 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1748006187 2798132 84c9c3725d3a288911f22499ac49a7b5 ""
+  "Figures/Tiny_yolo_architechture.png" 1749121598 236373 f89e87060f13340472adb0292025f6cc ""
+  "Figures/cnn_arh.png" 1749037302 319511 95b0d72f422e8ad091cf89a967b3267d ""
+  "Figures/convolution.png" 1749075067 103935 246f688631e9711a608571acec24ceb7 ""
   "Figures/lenovo_yoga_tab3_pro_front.png" 1623666897 151137 d184f93bed096b9065bc80fcba786b60 ""
+  "Figures/mlp.png" 1748989328 40797 ab9685a39319654d0124b054545ed964 ""
+  "Figures/pooling.png" 1749040154 66728 0549bb117a7eb73440c9666b98557878 ""
   "fer.cls" 1748340487 27127 b6eafcb69e4cae87147606c61c03c61d ""
   "hr_1191247427_73.pdf" 1748340487 15404 dbc4a4000c8247b64013f8c9cc6eec67 ""
-  "zavrsni_rad.aux" 1748972389 8227 ba9df61977ca07b901a48a936931c16c "pdflatex"
-  "zavrsni_rad.bbl" 1748972224 1630 248ca03ee9f6a263ae3029e5785dc87b "bibtex zavrsni_rad"
-  "zavrsni_rad.out" 1748972389 5898 79fb57d2db3f36fa1a71e2d88f30cfbc "pdflatex"
-  "zavrsni_rad.tex" 1748972388 10543 6022c74836468497d2fbbfee5c52dd9b ""
-  "zavrsni_rad.toc" 1748972389 2774 faff5525c16ed24616b4340866d2e3b9 "pdflatex"
+  "zavrsni_rad.aux" 1749123686 11814 184e6b29b6fb2bc8fa6eb068350d5a16 "pdflatex"
+  "zavrsni_rad.bbl" 1749123342 3299 5ccb8fa3ea6aa8bb76581d8af4e44aa4 "bibtex zavrsni_rad"
+  "zavrsni_rad.out" 1749123686 6473 25833b342a9d6e8ec60763df6e6d2a5a "pdflatex"
+  "zavrsni_rad.tex" 1749123685 19499 a0f25289d1980c2e341fc96a4d726cb6 ""
+  "zavrsni_rad.toc" 1749123686 3010 ec5c385db223ad78afd31fb9c98cedcf "pdflatex"
   (generated)
   "zavrsni_rad.aux"
   "zavrsni_rad.log"
