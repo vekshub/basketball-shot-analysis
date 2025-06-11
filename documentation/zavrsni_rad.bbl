@@ -81,4 +81,49 @@ L.~Bastijanić, ``Detekcija objekata metodama strojnog učenja'', Diplomski
 J.~Redmon i A.~Farhadi, ``Yolov3: An incremental improvement'', \emph{arXiv},
   2018.
 
+\bibitem{10937574}
+\BIBentryALTinterwordspacing
+V.~Kartik i R.~Greer, ``Optimizing basketball shot trajectory using image
+  segmentation techniques for training feedback'', u \emph{2024 IEEE MIT
+  Undergraduate Research Technology Conference (URTC)}, 2024., str. 1--6.
+  \url{https://doi.org/10.1109/URTC65039.2024.10937574}
+\BIBentrySTDinterwordspacing
+
+\bibitem{article}
+\BIBentryALTinterwordspacing
+G.~Raiola i T.~D'isanto, ``Descriptive shot analysis in basketball'',
+  \emph{Journal of Human Sport and Exercise}, sv.~11, 01 2016.
+  \url{https://doi.org/10.14198/jhse.2016.11.Proc1.18}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Hamilton1997}
+\BIBentryALTinterwordspacing
+G.~R. Hamilton i C.~Reinschmidt, ``Optimal trajectory for the basketball free
+  throw'', \emph{Journal of Sports Sciences}, sv.~15, br.~5, str. 491--504,
+  listopad 1997. \url{https://doi.org/10.1080/026404197367137}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Tran2008}
+\BIBentryALTinterwordspacing
+C.~M. Tran i L.~M. Silverberg, ``Optimal release conditions for the free throw
+  in men's basketball'', \emph{Journal of Sports Sciences}, sv.~26, br.~11,
+  str. 1147--1155, rujan 2008. \url{https://doi.org/10.1080/02640410802004948}
+\BIBentrySTDinterwordspacing
+
+\bibitem{python}
+Python, ``{Python documentation}'', \url{https://www.python.org/about/}.
+
+\bibitem{opencv}
+OpenCV, ``{OpenCV documentation}'',
+  \url{https://docs.opencv.org/4.x/d1/dfb/intro.html}.
+
+\bibitem{depthai}
+Luxonis, ``{Oak-D Pro Wide PoE documentation}'',
+  \url{https://docs.luxonis.com/hardware/products/OAK-D%20Pro%20W%20PoE}.
+
+\bibitem{ultralytics}
+Ultralytics, ``{Ultralytics YOLOv11 Documentation}'',
+  \url{https://docs.ultralytics.com/#how-can-i-train-a-custom-yolo-model-on-my-dataset},
+  2024.
+
 \end{thebibliography}

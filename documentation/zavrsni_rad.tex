@@ -82,7 +82,7 @@ Cilj ovog rada je razvoj sustava za automatsku analizu šuterske izvedbe u koša
 Sustav omogućuje precizno praćenje 3D putanje lopte, detekciju koša te izračun ključnih metrika poput kuta izbačaja, brzine lopte i uspješnosti šuta. 
 Takva analiza pruža trenerima i igračima objektivne informacije potrebne za optimizaciju trenažnog procesa i povećanje učinkovitosti.
 
-Za detekciju lopte i obruča koristi se unaprijed istreniran YOLO model, dok se 3D pozicije objekata dobivaju kombiniranjem 2D koordinata s dubinskim informacijama. 
+Za detekciju lopte i obruča koristi se YOLO model treniran na vlastitom skupu podataka, dok se 3D pozicije objekata dobivaju kombiniranjem 2D koordinata s dubinskim informacijama. 
 Razvijeni sustav predstavlja korak prema modernizaciji trenažnog procesa u košarci, omogućujući preciznu, automatiziranu i pristupačnu analizu šuta, s ciljem poboljšanja individualne izvedbe i ukupne uspješnosti momčadi.
 
 %---TEORIJSKA PODLOGA I DOSADAŠNJA ISTRAŽIVANJA / THEORETICAL BACKGROUND AND PREVIOUS RESEARCH -----------------------------
@@ -193,7 +193,7 @@ Jednostupanjski algoritmi za detekciju objekata analiziraju cijelu sliku u jedno
 Ovakav pristup značajno je učinkovit u pogledu računalnih resursa i brzine izvođenja, što ga čini pogodnim za primjenu u sustavima s ograničenim hardverskim kapacitetima i u stvarnom vremenu.
 Najpoznatije metode ovog tipa su: OverFeat, SSD, YOLO i RetinaNet.
 
-Jedan od najpoznatijih predstavnika ove skupine i metoda koju ćemo mi koristiti je YOLO, koji koristi potpuno konvolucijsku neuronsku mrežu za istovremenu detekciju svih objekata na slici \cite{v7labs_yolo_2023}. 
+Jedan od najpoznatijih predstavnika ove skupine i model koju ćemo mi koristiti je YOLO, koji koristi potpuno konvolucijsku neuronsku mrežu za istovremenu detekciju svih objekata na slici \cite{v7labs_yolo_2023}. 
 YOLO algoritam kao ulaz uzima cijelu sliku i koristi jednostavnu duboku konvolucijsku neuronsku mrežu za detekciju objekata.
 Struktura mreže temeljena je na CNN arhitekturi, koja se sastoji od konvolucijskih slojeva, slojeva sažimanja i potpuno povezanih slojeva (slika \ref{fig:yolo_architecture}).
 \begin{figure}[H]
@@ -209,10 +209,60 @@ Svaki granični okvir ima predviđanja u obliku (x, y, w, h, s) gdje su (x,y) ko
 
 \section{Dosadašnja istraživanja}
 \label{pog:dosadasnja_istrazivanja}
+Analiza učinkovitosti šuta u košarci predmet je brojnih istraživanja, kako iz tehničko-biomehaničkog, tako i iz tehnološkog aspekta. 
+Neki radovi koriste napredne metode računalnog vida i dubokog učenja, dok se drugi oslanjaju na klasične biomehaničke pristupe.
 
+Jedno suvremeno istraživanje temelji se na korištenju predtreniranog Faster R-CNN modela za detekciju lopte i obruča na videozapisima šuterskih pokušaja. 
+Uz pomoć image segmentation tehnika i dvije metode aproksimacije parabole (Bounce-Around i SWISAC), analizira se 2D putanja lopte kako bi se izračunao kut izbačaja i predvidjelo hoće li lopta ući u koš. 
+Iako model ne može detektirati loptu u trenutku kada prolazi kroz mrežicu zbog zaklonjenosti (occlusion), algoritam nudi predikciju pogotka na temelju projekcije parabole. 
+Prednost ovakvog pristupa je mogućnost davanja automatskih povratnih informacija igraču o kutu izbačaja i točnosti šuta, no detekcija u zaklonjenim kadrovima ostaje izazov.
+Također, istraživanje ne uključuje 3D rekonstrukciju putanje lopte pa je potrebno postaviti kameru u optimalan položaj, okomito na liniju šuta, kako bi se dobili točni rezultati \cite{10937574}.
+
+Drugi pristup koji se pokazao korisnim za analizu šuta, iako ne koristi računalni vid, jest biomehanički model koji uzima u obzir kut ubačaja lopte u koš, brzinu izbačaja, rotaciju i početnu visinu lopte. 
+Slika \ref{fig:forces} ilustrira četiri ključna svojstva sile za lakše razumijevanje biomehaničkih aspekata šuta. 
+Istraživanje ističe kako manji kutovi izbačaja dovode do većih odstupanja od idealne putanje i smanjuju vjerojatnost uspješnog pogotka. 
+Najveća pogreška ostvaruje se kod ulaznog kuta od 90°, dok se za kutove ispod 50° znatno smanjuje mogućnost pogotka. 
+Također navodi kako su brzina izbačaja i kut izbačaja međusobno su povezani, pri čemu udaljenost šuta izravno utječe na brzinu izbačaja, tj. što je šut udaljeniji, to je potrebna veća brzina. 
+Udaljenost također neizravno utječe na kut izbačaja, preciznost šuta opada s većom udaljenošću jer i minimalna odstupanja postaju izraženija zbog duljeg vremena leta lopte.
+Rad pruža korisne smjernice za optimizaciju tehnike šuta s biomehaničkog aspekta, ali bez tehničke implementacije ili automatizirane analize \cite{article}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{Figures/The-four-properties-of-force-Hede-Russell-Weatherby-2011.png}
+  \caption{Četiri osnovna svojstva sile: iznos (magnituda), smjer djelovanja, točka primjene i pravac djelovanja \cite{article}}
+  \label{fig:forces}
+\end{figure}
+Još jedno istraživanje temeljilo se na teorijskoj analizi, gdje se proučavala putanja lopte prilikom šutiranja slobodnog bacanja.
+Analizirao se kut, brzina i rotacija pri ispucavanju. 
+Analitički su izračunate kombinacije navedenih parametara koje su rezultirale uspješnim pokušajem.
+Optimalni ishod šuta postignut je pri kutu od oko 60° i brzinom od 7,3 m/s \cite{Hamilton1997}.
+
+Sličan pristup primjenjen je u istraživanju \cite{Tran2008}, čiji je cilj bio utvrditi optimalne uvjete otpuštanja lopte pri slobodnom bacanju u muškoj košarci.
+Korišteno je stotine tisuća 3D simulacija putanja lopte, pri čemu je analizirano pet varijabli: visina otpuštanja, brzina otpuštanja, kut izbačaja, bočni kut i rotacija lopte.
+Pretpostavljeno je da šuter postiže uspješnost od 70\% i da lopta biva otpuštena na visini od 2,134 m.
+Rezultati su pokazali da šuter treba lopti dati do 3 Hz rotacije unazad, ciljati prema stražnjem dijelu obruča i izbaciti loptu pod kutom od 52° u odnosu na horizontalu. 
+Također, preporučuje se što viši položaj otpuštanja lopte, pod uvjetom da to ne narušava konzistentnost izvođenja šuta.
 %---KORIŠTENE TEHNOLOGIJE I ALATI / USED TECHNOLOGIES AND TOOLS -----------------------------
 \chapter{Korištene tehnologije i alati}
 \label{pog:korištene_tehnologije_i_alati}
+U sklopu ovog rada pažljivo su odabrane i implementirane različite tehnologije i alati koji su ključni za razvoj sustava za detekciju i analizu košarkaškog šuta. 
+
+Kao glavni programski jezik korišten je Python, zbog svoje čitljivosti, fleksibilnosti i velike podrške u području računalnog vida i dubokog učenja \cite{python}.
+Za dohvat i obradu slike te implementaciju računalnog vida korištena je OpenCV biblioteka. Zahvaljujući svojoj modularnoj strukturi i širokoj podršci u zajednici, OpenCV omogućuje jednostavnu implementaciju zadataka poput obrade slika, filtriranja, praćenja objekata i vizualizacije rezultata \cite{opencv}. 
+U sklopu ovog projekta korišten je za obradu video okvira, crtanje bounding boxova, vizualizaciju putanje lopte te manipulaciju slikovnim i dubinskim podacima.
+Matplotlib poslužio je za grafički prikaz rezultata, posebno za crtanje i spremanje dijagrama putanje lopte i kuta izbačaja. 
+
+Snimanje videozapisa i dubinskih podataka vršeno je pomoću Oak-D Pro Wide kamere. Ova kamera opremljena je RGB senzorom visoke rezolucije i stereo kamerama za procjenu dubine. 
+RGB podatci koristili su se za detekciju objekata, dok su dubinski podaci omogućili rekonstrukciju 3D putanje lopte.
+Osim mogućnosti snimanja slike , omogućuje istovremeno izvođenje detekcije objekata na samom uređaju, no taj pristup nije se pokazao dovoljnim, pa je taj dio obavljen na računalu \cite{depthai}.
+
+Za detekciju objekata korištene su novije verzije YOLO modela, unaprijeđene verzija jednoprolaznog detekcijskog algoritma (You Only Look Once), koji omogućuje brzo i precizno prepoznavanje objekata i segmentaciju slike.
+YOLO-ov jedinstveni pristup tretira detekciju objekata kao jedan regresijski problem, predviđajući okvire i vjerojatnosti klasa izravno iz slika u jednom prolazu.
+YOLO podržava razne zadatke umjetne inteligencije vida kao što su detekcija, segmentacija, procjena položaja, praćenje i klasifikacija.
+Njegova najsuvremenija arhitektura osigurava vrhunsku brzinu i točnost, što ga čini prikladnim za različite primjene \cite{ultralytics}.
+Za treniranje YOLO modela korišten je Google Colab, online razvojno okruženje koje omogućuje korištenje GPU-a u oblaku. 
+Model je treniran na vlastitom skupu podataka snimljenom pomoću OAK-D kamere, a treniranje je provedeno u Colabu zbog jednostavnog pristupa računalnim resursima, lakog rukovanja podacima i brzine izvođenja, čime je omogućena brza iteracija modela i validacija rezultata.
+
+
 
 
 %---RAZVOJ SUSTAVA ZA DETEKCIJU I ANALIZU KOŠARKAŠKOG ŠUTA / DEVELOPMENT OF A SYSTEM FOR DETECTING AND ANALYZING BASKETBALL SHOTS
@@ -299,22 +349,22 @@ Svaki granični okvir ima predviđanja u obliku (x, y, w, h, s) gdje su (x,y) ko
 
 %predlozak
 
-\begin{figure}[htb]
-  \centering
-  \includegraphics[width=0.38\linewidth]{Figures/lenovo_yoga_tab3_pro_front.png} 
-  \caption{Moja prva slika}
-  \label{slk:prvaslika}
-\end{figure}
+% \begin{figure}[htb]
+%   \centering
+%   \includegraphics[width=0.38\linewidth]{Figures/lenovo_yoga_tab3_pro_front.png} 
+%   \caption{Moja prva slika}
+%   \label{slk:prvaslika}
+% \end{figure}
 
-Referenciramo se na sliku \ref{slk:prvaslika} u sredini rečenice, zatim prije zareza \ref{slk:prvaslika}, te zatim na kraju rečenice \ref{slk:prvaslika}.
-Upravo smo testirali radi li naredba \verb|\ref| ispravno u slučaju kada nakon nje slijedi točka.
+% Referenciramo se na sliku \ref{slk:prvaslika} u sredini rečenice, zatim prije zareza \ref{slk:prvaslika}, te zatim na kraju rečenice \ref{slk:prvaslika}.
+% Upravo smo testirali radi li naredba \verb|\ref| ispravno u slučaju kada nakon nje slijedi točka.
 
-Sada slijedi jedna jednadžba:
-\begin{equation}
-  \label{jed:prvajednadzba}
-  \int_{-\infty}^{+\infty}f(t)\,dt=F(\omega)
-\end{equation}
-Jednadžba \eqref{jed:prvajednadzba} je moja prva jednadžba koja defnira par $f(t)\ufrek F(\omega)$ ili $F(\omega)\uvrem f(t)$.
+% Sada slijedi jedna jednadžba:
+% \begin{equation}
+%   \label{jed:prvajednadzba}
+%   \int_{-\infty}^{+\infty}f(t)\,dt=F(\omega)
+% \end{equation}
+% Jednadžba \eqref{jed:prvajednadzba} je moja prva jednadžba koja defnira par $f(t)\ufrek F(\omega)$ ili $F(\omega)\uvrem f(t)$.
 
 %--- PRIVITCI / APPENDIX -------------------------------------------------------
 

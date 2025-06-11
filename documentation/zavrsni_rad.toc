@@ -10,30 +10,30 @@
 \contentsline {subsection}{\numberline {2.2.1.}Dvostupanjske metode detekcije objekata}{9}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2.}Jednostupanjske metode detekcije objekata}{10}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3.}Dosadašnja istraživanja}{11}{section.2.3}%
-\contentsline {chapter}{\numberline {3.}Korištene tehnologije i alati}{12}{chapter.3}%
-\contentsline {chapter}{\numberline {4.}Razvoj sustava za detekciju i analizu košarkaškog šuta}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1.}Prikupljanje i obrada podataka}{13}{section.4.1}%
-\contentsline {section}{\numberline {4.2.}Detekcija objekata korištenjem YOLO modela}{13}{section.4.2}%
-\contentsline {section}{\numberline {4.3.}Prepoznavanje pokušaja šuta i pogođenih koševa}{13}{section.4.3}%
-\contentsline {section}{\numberline {4.4.}Rekonstrukcija 2D i 3D putanje lopte}{13}{section.4.4}%
-\contentsline {section}{\numberline {4.5.}Određivanje kuta izbačaja i brzine šuta}{13}{section.4.5}%
-\contentsline {section}{\numberline {4.6.}Mogućnosti prijenosa sustava na mobilne uređaje}{13}{section.4.6}%
-\contentsline {chapter}{\numberline {5.}Rezultati i rasprava}{14}{chapter.5}%
-\contentsline {section}{\numberline {5.1.}Primjeri detekcije i analize šuteva}{14}{section.5.1}%
-\contentsline {section}{\numberline {5.2.}Evaluacija točnosti detekcije i analize}{14}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1.}Eksperimenti u kojima se razvijeni postupak dobro ponaša}{14}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2.}Eksperimenti u kojima postupak nalazi objekte koje nismo tražili (false positive error)}{14}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3.}Eksperimenti u kojima postupak ne pronalazi tražene objekte (false negative error)}{14}{subsection.5.2.3}%
-\contentsline {chapter}{\numberline {6.}Zaključak}{15}{chapter.6}%
-\contentsline {chapter}{Literatura}{16}{chapter*.7}%
+\contentsline {chapter}{\numberline {3.}Korištene tehnologije i alati}{13}{chapter.3}%
+\contentsline {chapter}{\numberline {4.}Razvoj sustava za detekciju i analizu košarkaškog šuta}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1.}Prikupljanje i obrada podataka}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2.}Detekcija objekata korištenjem YOLO modela}{15}{section.4.2}%
+\contentsline {section}{\numberline {4.3.}Prepoznavanje pokušaja šuta i pogođenih koševa}{15}{section.4.3}%
+\contentsline {section}{\numberline {4.4.}Rekonstrukcija 2D i 3D putanje lopte}{15}{section.4.4}%
+\contentsline {section}{\numberline {4.5.}Određivanje kuta izbačaja i brzine šuta}{15}{section.4.5}%
+\contentsline {section}{\numberline {4.6.}Mogućnosti prijenosa sustava na mobilne uređaje}{15}{section.4.6}%
+\contentsline {chapter}{\numberline {5.}Rezultati i rasprava}{16}{chapter.5}%
+\contentsline {section}{\numberline {5.1.}Primjeri detekcije i analize šuteva}{16}{section.5.1}%
+\contentsline {section}{\numberline {5.2.}Evaluacija točnosti detekcije i analize}{16}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1.}Eksperimenti u kojima se razvijeni postupak dobro ponaša}{16}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2.}Eksperimenti u kojima postupak nalazi objekte koje nismo tražili (false positive error)}{16}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3.}Eksperimenti u kojima postupak ne pronalazi tražene objekte (false negative error)}{16}{subsection.5.2.3}%
+\contentsline {chapter}{\numberline {6.}Zaključak}{17}{chapter.6}%
+\contentsline {chapter}{Literatura}{18}{chapter*.8}%
 \babel@toc {croatian}{}\relax 
-\contentsline {chapter}{Sa\v {z}etak}{18}{chapter*.8}%
+\contentsline {chapter}{Sa\v {z}etak}{20}{chapter*.9}%
 \babel@toc {croatian}{}\relax 
 \babel@toc {croatian}{}\relax 
-\babel@toc {croatian}{}\relax 
-\babel@toc {english}{}\relax 
-\contentsline {chapter}{Abstract}{19}{chapter*.9}%
 \babel@toc {croatian}{}\relax 
 \babel@toc {english}{}\relax 
+\contentsline {chapter}{Abstract}{21}{chapter*.10}%
 \babel@toc {croatian}{}\relax 
-\contentsline {chapter}{\numberline {A:}The Code}{21}{chapter.1}%
+\babel@toc {english}{}\relax 
+\babel@toc {croatian}{}\relax 
+\contentsline {chapter}{\numberline {A:}The Code}{22}{chapter.1}%
