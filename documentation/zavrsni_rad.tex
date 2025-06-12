@@ -255,6 +255,9 @@ Snimanje videozapisa i dubinskih podataka vršeno je pomoću Oak-D Pro Wide kame
 RGB podatci koristili su se za detekciju objekata, dok su dubinski podaci omogućili rekonstrukciju 3D putanje lopte.
 Osim mogućnosti snimanja slike , omogućuje istovremeno izvođenje detekcije objekata na samom uređaju, no taj pristup nije se pokazao dovoljnim, pa je taj dio obavljen na računalu \cite{depthai}.
 
+Za pripremu skupa podataka korištena je platforma Roboflow, koja omogućuje jednostavno označavanje (anotaciju) objekata na slikama, organizaciju skupa podataka te automatsku generaciju formata kompatibilnih s različitim modelima računalnog vida \cite{roboflow}. 
+U ovom radu, Roboflow je korišten za ručnu anotaciju položaja lopte i koša unutar slika dobivenih iz videozapisa šuteva.
+
 Za detekciju objekata korištene su novije verzije YOLO modela, unaprijeđene verzija jednoprolaznog detekcijskog algoritma (You Only Look Once), koji omogućuje brzo i precizno prepoznavanje objekata i segmentaciju slike.
 YOLO-ov jedinstveni pristup tretira detekciju objekata kao jedan regresijski problem, predviđajući okvire i vjerojatnosti klasa izravno iz slika u jednom prolazu.
 YOLO podržava razne zadatke umjetne inteligencije vida kao što su detekcija, segmentacija, procjena položaja, praćenje i klasifikacija.
@@ -268,16 +271,81 @@ Model je treniran na vlastitom skupu podataka snimljenom pomoću OAK-D kamere, a
 %---RAZVOJ SUSTAVA ZA DETEKCIJU I ANALIZU KOŠARKAŠKOG ŠUTA / DEVELOPMENT OF A SYSTEM FOR DETECTING AND ANALYZING BASKETBALL SHOTS
 \chapter{Razvoj sustava za detekciju i analizu košarkaškog šuta}
 \label{pog:razvoj_sustava_za_detekciju_i_analizu_kosarkaskog_suta}
+U ovom poglavlju opisan je postupak razvoja računalnog sustava za automatsku detekciju i analizu šuterskih izvedbi u košarci. 
+Sustav kombinira metode računalnog vida, YOLO model za detekciju objekata, te obradu dubinskih i vremenskih podataka radi izračuna ključnih metrika poput putanje lopte, kuta izbačaja i brzine šuta.
 
 \section{Prikupljanje i obrada podataka}
 \label{pog:prikupljanje_i_obrada_podataka}
+Prikupljanje podataka ključno je za treniranje i evaluaciju modela detekcije objekata.
+U ovom radu korišten je vlastiti skup podataka snimljen pomoću OAK-D Pro Wide kamere, koja omogućuje istovremeno snimanje RGB i dubinskih podataka.
+
+Snimanje je provedeno u kontroliranim uvjetima, gdje su igrači izvodili šuteve iz različitih pozicija i sa različitih udaljenosti od koša.
+Također, fizičke predispozicije šutera, poput visine i tehnike izvođenja šuta, varirale su kako bi se obuhvatila široka paleta šuterskih situacija.
+
+Nakon snimanja, videozapisi su obrađeni tako da su izdvojeni kadrovi koji sadrže šuterske pokušaje.
+Svaki kadar je potom ručno anotiran.
+Klase objekata koje su anotirane uključuju:
+\begin{itemize}
+  \item \textbf{Košarkaška lopta u zraku} – označena kao \textit{basketball}, predstavlja košarkašku loptu koja se detektira u kadru i ne dodiruje se s drugim objektima.
+  \item \textbf{Košarkaška lopta u dodiru s košarkaškom mrežicom} - označena kao \textit{ballnet}, predstavlja košarkašku loptu koja se detektira u kadru i dodiruje se s košarkaškom mrežicom.
+  \item \textbf{Košarkaška lopta u dodiru s rukama igrača} – označena kao \textit{ballhand}, predstavlja košarkašku loptu koja se detektira u kadru i dodiruje se s rukama igrača.
+  \item \textbf{Koš} – označen kao \textit{net}, predstavlja košarkaški obruč s mrežicom koji se detektira u kadru.
+\end{itemize}
+Ove klase omogućuju modelu da razlikuje različite faze šuterskog pokušaja, što je ključno za preciznu analizu izvedbe.
+Ukupno je prikupljeno i anotirano 185 slika, 70\% korišteno je za treniranje modela, 20\% za validaciju i 10\% za testiranje.
 
 \section{Detekcija objekata korištenjem YOLO modela}
 \label{pog:detekcija_objekata_koristenjem_yolo_modela}
+Za detekciju relevantnih objekata korišten je YOLOv11 model, koji je treniran na prethodno pripremljenom skupu podataka.
+Anotirani skup slika izvezen je u YOLO format, tj. za svaku sliku spremljena je datoteka s istim imenom koja sadrži koordinate bounding boxova i pripadajuće klase objekata.
 
+Trening modela proveden je u Google Colabu, koristeći GPU resurse za ubrzanje procesa.
+Evaluacija modela napravljena je analizom konfuzijske matrice i promatranjem metrika kroz epohe treniranja. 
+
+Kao što prikazuje slika \ref{fig:confusion_matrix}, model najbolje klasificira objekte player i net, dok dolazi do zamjena kod vizualno sličnih klasa poput ballhand i ballnet. 
+Rezultati treniranja (slika \ref{fig:training_results}) ukazuju na stabilan pad funkcije gubitka i visoku preciznost (mAP50 $\approx$ 0.9), što potvrđuje učinkovitost modela na zadanom problemu.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{Figures/confusion_matrix.png}
+  \caption{Konfuzijska matrica detekcijskog modela za šest različitih klasa. Dijagonalne vrijednosti predstavljaju točne klasifikacije, dok ostale pokazuju pogreške između sličnih objekata.}
+  \label{fig:confusion_matrix}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{Figures/results.png}
+  \caption{Kretanje funkcije gubitka i metrika tijekom procesa treniranja modela. Prikazane su vrijednosti gubitaka (box, klasifikacijski i distribucijski), preciznosti, odziva te mAP50 i mAP50–95 }
+  \label{fig:training_results}
+\end{figure}
 
 \section{Prepoznavanje pokušaja šuta i pogođenih koševa}
 \label{pog:prepoznavanje_pokusaja_suta_i_pogodenih_koseva}
+Nakon što je model treniran, sljedeći korak bio je implementacija sustava za prepoznavanje pokušaja šuta i pogođenih koševa.
+
+Krenimo prvo s prepoznavanjem pokušaja šuta.
+U svakom kadru bilježe se detektirani objekti.
+Kada se u istom kadru detektira lopta(basketball) i koš(net), provjeravamo je li centroid bounding boxa lopte unutar zadanog radiusa od centroida bounding boxa koša. 
+Ako je to slučaj, još moramo provjeriti je li lopta iznad koša, tj. je li y koordinata centroida lopte veća od y koordinata centroida koša.
+Ako su oba uvjeta zadovoljena, tada se taj kadar smatra pokušajem šuta.
+Primjer prepoznatog pokušaja šuta prikazan je na slici \ref{fig:attempted_shot}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/shot_attempt.png}
+  \caption{Primjer prepoznatog pokušaja šuta, detektirana lopta i koš su označeni bounding boxovima.}
+  \label{fig:attempted_shot}
+\end{figure}
+Uspješan šut, tj. pogodak u koš, prepoznaje se na sljedeći način.
+U slučaju dodira lopte s košem detekcija lopte može biti otežana zbog zaklonjenosti, iz tog razloga koristimo klasu ballnet.
+Kada detektiramo ballnet u više od dva kadra, tada se smatra da je lopta pogodila koš te bilježimo pogodak.
+Na slici \ref{fig:made_shot} možemo vidjeti trenutak uspješnog šuta.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/made_shot.png}
+  \caption{Primjer uspješnog šuta, gdje je lopta detektirana u dodiru s košem.}
+  \label{fig:made_shot}
+\end{figure}
+
+
 
 \section{Rekonstrukcija 2D i 3D putanje lopte}
 \label{pog:rekonstrukcija_2d_i_3d_putanje_lopte}
