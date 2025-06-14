@@ -1,24 +1,7 @@
-# Bytecode
-__pycache__/
-*.py[cod]
+# Ignore everything
+*
 
-# Data
-*.npy
-
-# Video files
-*.mp4
-*.avi
-*.mov
-*.png
-# IDEs and OS
-.DS_Store
-.vscode/
-.idea/
-*.swp
-
-#other files
-classes.txt
-practicePalGUI.py
-practicePalGUIv11.py
-stereoinput.py
-tk_test.py
+# But do not ignore these
+!.gitignore
+!README.md
+!ppal_traj.py
