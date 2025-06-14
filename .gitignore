@@ -4,3 +4,5 @@
 # But do not ignore these
 !.gitignore
 !documentation/
+!documentation/**
+!README.md
