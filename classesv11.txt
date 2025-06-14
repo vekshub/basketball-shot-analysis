@@ -1,5 +1,0 @@
-ballhand
-ballnet
-basketball
-net
-player
